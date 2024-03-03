@@ -69,9 +69,9 @@ Script should accept the following arguments in addition to those defined in `op
 
 The name of the theme and theme directory name. Create if neccessary. If not supplied, use the current parent directory of the directory containing the config script.
 
-`--dest <directory>`
+`--dest <path>`
 
-Name of the folder containing the theme directory. This would normally be `~/.themes` but may also be `~/.local/share/themes` , `/usr/share/themes` or something else. Create if neccessary. If not supplied, use the current parent directory of the parent directory of the directory containing the config script.
+Path of the folder containing the theme directory. This would normally be `~/.themes` but may also be `~/.local/share/themes` , `/usr/share/themes` or something else. Create if neccessary. If not supplied, use the current parent directory of the parent directory of the directory containing the config script.
 
 Any unrecognised arguments should be ignored.
 

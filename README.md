@@ -1,13 +1,11 @@
 ## A specification for making configurable gtk themes
 
-This is a way to enable gtk, cinnamon, and xfce themes to have configurable options.
+This is a way to enable gtk, cinnamon, xfce, and GNOME Shell themes to have configurable options in a standardised way so that DE can present the options to the user in an easy to access way.
 
 How it works:
 A theme stored in `~/.themes` can make itself configurable by including a shell script or program that will alter the theme in place according to options passed to it as arguments.
 
 A file called `config_options.json` will be included in the theme that lists the options available.
-
-The config script and `config_options.json` would follow a standard specification so that DEs can make the theme options available to users in an easy to access way.
 
 A DE settings dialog and/or a program included in the theme directory could read the `config_options.json` file and present the available theme options to the user in a window.
 

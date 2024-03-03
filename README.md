@@ -1,6 +1,6 @@
 ## A specification for making configurable gtk themes
 
-This is a way to enable gtk, cinnamon, xfce, and GNOME Shell themes, etc. to have configurable options in a standardised way so that DEs can present the options to the user in an easy to access way.
+This is a way to enable gtk, cinnamon, xfwm, and GNOME Shell themes, etc. to have configurable options in a standardised way so that DEs can present the options to the user in an easy to access way.
 
 How it works:
 

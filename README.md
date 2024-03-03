@@ -67,7 +67,7 @@ Script should accept the following arguments in addition to those defined in `op
 
 `--name <theme name>`
 
-The name of the theme and theme directory name. Create if neccessary. If not supplied, use the current parent directory of the directory containing the config script.
+The theme directory name. Create if neccessary. If not supplied, use the current parent directory of the directory containing the config script.
 
 `--dest <path>`
 

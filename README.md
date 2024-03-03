@@ -11,9 +11,9 @@ The config script and `config_options.json` would follow a standard specificatio
 
 A DE settings dialog and/or a program included in the theme directory could read the `config_options.json` file and present the available theme options to the user in a window.
 
-When user changes options and clicks "Apply" button, the program calls the configure script with the options as arguments thereby altering the theme. Program then reloads the theme in the OS.
+When user changes options and clicks "Apply" button, the program/DE calls the configure script with the options as arguments thereby altering the theme. Program/DE then reloads the theme in the OS.
 
-The configure script and `config_options.json` file should be in a directory called "config" in the theme directory and the script should have no dependencies other than what would likely be found on any gtk based distro.
+The configure script and `config_options.json` file should be in a directory called "config" in the theme directory and the script should have no external dependencies other than what would likely be found on any gtk based distro.
 
 ## Spec for the `options_config.json` file:
 

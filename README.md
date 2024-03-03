@@ -3,6 +3,7 @@
 This is a way to enable gtk, cinnamon, xfce, and GNOME Shell themes, etc. to have configurable options in a standardised way so that DEs can present the options to the user in an easy to access way.
 
 How it works:
+
 A theme stored in `~/.themes` can make itself configurable by including a shell script or program that will alter the theme in place according to options passed to it as arguments.
 
 A file called `config_options.json` will be included in the theme that lists the options available.

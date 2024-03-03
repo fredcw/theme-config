@@ -73,6 +73,8 @@ The theme directory name. Create if neccessary. If not supplied, use the current
 
 Path of the folder containing the theme directory. This would normally be `~/.themes` but may also be `~/.local/share/themes` , `/usr/share/themes` or something else. Create if neccessary. If not supplied, use the current parent directory of the parent directory of the directory containing the config script.
 
+If the theme name or path is different from its current location, the script should not copy the theme's `config` directory to the new location as this will be done by the program calling the script if wanted.
+
 Any unrecognised arguments should be ignored.
 
 Any missing config arguments listed in `options_config.json` should not prevent the script from completing and a default value used instead.

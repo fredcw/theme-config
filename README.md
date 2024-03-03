@@ -61,7 +61,7 @@ TODO: Other option types could be added eg. a numerical value like Gtk.SpinButto
 
 ## Behaviour of the config script:
 
-Script should rewrite the theme in the theme directory while preserving the contained `config` directory if it exists.
+Script should write/rewrite the theme in the theme directory while preserving the contained `config` directory if it exists.
 
 Script should accept the following arguments in addition to those defined in `options_config.json`
 

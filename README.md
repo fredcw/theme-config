@@ -61,19 +61,9 @@ TODO: Other option types could be added eg. a numerical value like Gtk.SpinButto
 
 ## Behaviour of the config script:
 
-Script should write/rewrite the theme in the theme directory while preserving the contained `config` directory if it exists.
+Script should write/rewrite the theme in the parent directory of the directory containing the script.
 
-Script should accept the following arguments in addition to those defined in `options_config.json`
-
-`--name <theme name>`
-
-The theme directory name. Create if necessary. If not supplied, use the current parent directory of the directory containing the config script.
-
-`--dest <path>`
-
-Path of the folder containing the theme directory. This would normally be `~/.themes` but may also be `~/.local/share/themes` , `/usr/share/themes` or something else. Create if necessary. If not supplied, use the current parent directory of the parent directory of the directory containing the config script.
-
-If the theme name or path is different from its current location, the script should not copy the theme's `config` directory to the new location as this will be done by the program calling the script if wanted.
+The theme name should be taken as the name of the current parent directory of the directory containing the config script.
 
 Any unrecognised arguments should be ignored.
 

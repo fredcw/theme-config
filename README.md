@@ -31,31 +31,31 @@ All fields required unless stated otherwise.
 combo_type. 
 ```
 {
-            "name": <string>, This is also the name of the argument passed to the script as --<name> <id_string>
-            "label": <string>, 
-            "type": "combo",
-            "desktop": <string>, One of all|GNOME|Cinnamon|XFCE|MATE|Budgie|pop|Pantheon|Unity|<some other>. The DE in which this option should appear.
-            "ids": [
-                <string>, ...
-            ],
-            "labels": [
-                <string>, ...
-            ],
-            "color_codes": [ Optional - use color swatches instead of labels if implemented. Color code format: "#XXXXXX"
-                <string>, ...
-            ],
-            "value": <number> A default value with distributed theme and subsequently used to store the current user value
-        }
+    "name": <string>, This is also the name of the argument passed to the script as --<name> <id_string>
+    "label": <string>, 
+    "type": "combo",
+    "desktop": <string|array_of_strings>, One or more of all|GNOME|Cinnamon|XFCE|MATE|Budgie|pop|Pantheon|Unity|<some other>. The DE(s) in which this option should appear.
+    "ids": [
+        <string>, ...
+    ],
+    "labels": [
+        <string>, ...
+    ],
+    "color_codes": [ Optional - use color swatches instead of labels if implemented. Color code format: "#XXXXXX"
+        <string>, ...
+    ],
+    "value": <number> A default value with distributed theme and subsequently used to store the current user value
+}
 ```
 switch_type.
 ```
 {
-            "name": <string>, This is also the name of the argument passed to the script when the option is selected (true) eg. --name, no argument is passed when false
-            "label": <string>,
-            "type": "switch",
-            "desktop": <string>,
-            "value": <boolean>
-        }
+    "name": <string>, This is also the name of the argument passed to the script when the option is selected (true) eg. --name, no argument is passed when false
+    "label": <string>,
+    "type": "switch",
+    "desktop": <string|array_of_strings>,
+    "value": <boolean>
+}
 ```
 TODO: Other option types could be added eg. a numerical value like Gtk.SpinButton and a color picker option.
 

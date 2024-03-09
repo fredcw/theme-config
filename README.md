@@ -63,7 +63,7 @@ TODO: Other option types could be added eg. a numerical value like Gtk.SpinButto
 
 Script should configure the theme according to the arguments passed to it and the theme should be in the parent directory of the directory containing the script.
 
-The theme name should be taken as the name of the current parent directory of the directory containing the config script.
+The theme name, for the purposes of values in `index.theme`, should be taken as the name of the current parent directory of the directory containing the config script.
 
 Any unrecognised arguments should be ignored.
 

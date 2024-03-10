@@ -4,7 +4,7 @@ This is a way to enable gtk, cinnamon, xfwm, and GNOME Shell themes, etc. to hav
 
 How it works:
 
-A theme stored in `~/.themes` can make itself configurable by including a shell script or program that will alter the theme in place according to options passed to it as arguments.
+A theme can make itself configurable by including a shell script or program that will alter the theme in place according to options passed to it as arguments.
 
 A file called `config_options.json` will be included in the theme that lists the options available.
 
@@ -17,6 +17,8 @@ The configure script and `config_options.json` file should be in a directory cal
 ## Spec for the `options_config.json` file:
 
 All fields required unless stated otherwise.
+
+All "name" fields in options[] must be unique.
 ```
 {
     "spec_version": <number> , Earliest version of this spec this file is compatible with. (only version=1 so far)
@@ -24,14 +26,14 @@ All fields required unless stated otherwise.
     "theme_name":  <string>,
     "adwaita_link_to_gtk4": <boolean> Optional, default=false. If files (gtk.css, gtk-dark.css, assets/) in <theme>/gtk-4.0 can be linked to from ~/.config/gtk-4.0 in order to theme libadwaita apps.
     "options": [ 
-            <combo_type|switch_type>, ...
+            <combo_type|switch_type|color-chooser_type|spinbutton_type>, ...
         ]
 }
 ```
 combo_type. 
 ```
 {
-    "name": <string>, This is also the name of the argument passed to the script as --<name> <id_string>
+    "name": <string>, This is the name of the argument passed to the script as --<name> <id_string>
     "label": <string>, 
     "type": "combo",
     "desktop": <string|array_of_strings>, One or more of all|GNOME|Cinnamon|XFCE|MATE|Budgie|pop|Pantheon|Unity|<some other>. The DE(s) in which this option should appear.
@@ -50,20 +52,41 @@ combo_type.
 switch_type.
 ```
 {
-    "name": <string>, This is also the name of the argument passed to the script when the option is selected (true) eg. --name, no argument is passed when false
+    "name": <string>, This is the name of the argument passed to the script when the option is selected (true) eg. --name, no argument is passed when false
     "label": <string>,
     "type": "switch",
     "desktop": <string|array_of_strings>,
     "value": <boolean>
 }
 ```
-TODO: Other option types could be added eg. a numerical value like Gtk.SpinButton and a color picker option.
-
+color-chooser_type
+```
+{
+    "name": <string>, This is the name of the argument passed to the script as --<name> <value>
+    "label": <string>,
+    "type": "color-chooser",
+    "desktop": <string|array_of_strings>,
+    "value": <string> Always in hexadecimal format: “#rrggbb”
+}
+```
+spinbutton_type
+```
+{
+    "name": <string>, This is the name of the argument passed to the script as --<name> <value>
+    "label": <string>,
+    "type": "spinbutton",
+    "desktop": <string|array_of_strings>,
+    "min": <number>,
+    "max": <number>,
+    "step": <number>,
+    "value": <number>
+}
+```
 ## Behaviour of the config script:
 
-Script should configure the theme according to the arguments passed to it and the theme should be in the parent directory of the directory containing the script.
+Script should configure the theme according to the arguments passed to it and the script, along with the options_config.json file, should be located in the `config` directory in the theme directory.
 
-The theme name, for the purposes of values in `index.theme`, should be taken as the name of the current parent directory of the directory containing the config script.
+The theme name, for the purposes of some values in `index.theme`, should be taken as the name of the current parent directory of the directory containing the config script.
 
 Any unrecognised arguments should be ignored.
 

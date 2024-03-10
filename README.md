@@ -84,7 +84,7 @@ spinbutton_type
 ```
 ## Behaviour of the config script:
 
-Script should configure the theme according to the arguments passed to it and the script, along with the options_config.json file, should be located in the `config` directory in the theme directory.
+Script should configure the theme according to the arguments passed to it and the script, along with the `options_config.json` file, should be located in the `config` directory in the theme directory.
 
 The theme name, for the purposes of some values in `index.theme`, should be taken as the name of the current parent directory of the directory containing the config script.
 
